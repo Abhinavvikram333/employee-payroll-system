@@ -1,5 +1,7 @@
 # MAIN.PY - EMPLOYEE WAGE CALCULATOR
 import random 
+from employee_payroll_system.employee_data import save_employee, display_all_employees
+
 
 WAGE_PER_HOUR = 20
 FULL_DAY_HOURS = 8
@@ -48,6 +50,9 @@ def calculate_monthly_wage(employee_name):
     print(f"Total Monthly Wage: ${total_wage}")
     print(f"{'='*40}")
 
+    save_employee({"name": employee_name, "days": total_days, 
+                   "hours": total_hours, "wage": total_wage})
+                   
     return{
         "name": employee_name,
         "days": total_days,
@@ -62,6 +67,7 @@ def main():
     print("1. Calculate wage for one employee")
     print("2. Calculate wages for multiple employees")
     print("3. Exit")
+    print("4. View all saved employees")
 
     choice = input("\nEnter choice: ")
 
@@ -75,7 +81,7 @@ def main():
         employees = []
         for i in range (n):
             name = input (f"enter the name of employee {i+1}:")
-            result = calculate_monthly_wage
+            result = calculate_monthly_wage(name)
             employees.append(result)
 
         print("\n=== SUMMARY ===")
@@ -84,6 +90,9 @@ def main():
 
     elif choice == "3":
         print("good bye !")
+
+    elif choice == "4":
+        display_all_employees()
 
 if __name__ == "__main__":
     main()

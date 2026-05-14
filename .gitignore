@@ -1,0 +1,15 @@
+# Virtual environment
+eps/
+venv/
+.venv/
+
+# Python
+__pycache__/
+*.pyc
+
+# Data files (generated at runtime)
+data/*.csv
+
+# OS / editor
+.DS_Store
+.vscode/
