@@ -1,6 +1,6 @@
 # MAIN.PY - EMPLOYEE WAGE CALCULATOR
 import random 
-from employee_payroll_system.employee_data import save_employee, display_all_employees
+from employee_data import save_employee, display_all_employees
 
 
 WAGE_PER_HOUR = 20
